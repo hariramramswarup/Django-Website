@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block title %}{{blog.title}}{% endblock title %}
+{% block content %}
+
+<div class="">
+    <div class="row align-items-start">
+      <div class="col">
+        <div class='container-fluid'>
+    
+            <h1><a href="{{blog.slug}}" class="fs-3 text-decoration-none">{{blog.title}}</a></h1>
+        
+            <span class='btn btn-primary'> <i class="bi bi-tag"></i> <a href="/category/{{blog.category}}" class="fs-6 text-decoration-none">{{blog.category}}</a></span>
+            
+            <div class="flex justify-center items-center ">
+                <img class='rounded my-3 flex img-thumbnail' width='200px' height='250px' src="{{blog.thumbnail_url}}">
+            </div>
+            <div class='justify-center '>
+                <p class="fs-4">Book Details</p>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Publisher:</td>
+                        <td>{{blog.publisher}}</td>
+                      </tr>
+                      <tr>
+                        <td>Book Name:</td>
+                        <td>{{blog.bookname}}</td>
+                      </tr>
+                      <tr>
+                        <td>Book Author:</td>
+                        <td>{{blog.bookauthor}}</td>
+                      </tr>
+                      <tr>
+                        <td>ISBN10:</td>
+                        <td>{{blog.isbn}}</td>
+                      </tr>
+                      <tr>
+                        <td>Language:</td>
+                        <td>{{blog.language}}</td>
+                      </tr>
+                      <tr>
+                        <td>Doc Type:</td>
+                        <td>{{blog.type}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                
+                    
+            </div>
+            <div class=' my-3 '>
+            <h2>Download {{blog.bookname}} by {{blog.bookauthor}} pdf free </h2>
+              <p>Looking for book {{blog.bookname}} by {{blog.bookauthor}} PDF. You are in the right place. Download {{blog.bookname}} by {{blog.bookauthor}} book in PDF.</p>
+              <p>The direct links to book's PDF for free without misleading pages. Check the links provided below to download {{blog.bookname}} by {{blog.bookauthor}} book in PDF.</p>
+            </div>
+              <div class=' my-3 '>
+              <h3>{{blog.bookname}} book pdf </h3>
+              <p>Click on the below links to download {{blog.bookname}} by {{blog.bookauthor}} book in PDF.</p>
+            </div>
+              
+            <div class='flex justify-center'>
+                <form action="/download/" method="post" id="systemForm">
+                    {% csrf_token %}
+                      <button type="submit" name="system" value="{{blog.download_url_one}}" form="systemForm" class='btn btn-primary my-2'>Download Book PDF [Link 1] <i class="fa-solid fa-download"></i></button>
+                  </form>
+                  <form action="/download/" method="post" id="systemForm">
+                    {% csrf_token %}
+                      <button type="submit" name="system" value="{{blog.download_url_two}}" form="systemForm" class='btn btn-primary my-2'>Download Book PDF [Link 2] <i class="fa-solid fa-download"></i></button>
+                  </form>
+            </div>
+        
+            <div class='my-3'>
+                <p>From the above links you will be able to download {{blog.bookname}} by {{blog.bookauthor}} book PDF.</p>
+              <li>{{blog.bookname}} PDF</li>
+              <li>Free {{blog.bookname}} book Pdfdrive</li>
+              <li>{{blog.bookname}} by {{blog.bookauthor}} free PDF download</li>
+              <li>Download {{blog.bookname}} {{blog.bookauthor}} PDF Google Drive</li>
+            </div>
+            <h3>{{blog.bookname}} book description </h3>
+            <p class=''>{{blog.content|safe}} </p>
+            
+            
+        </div>
+      </div>
+      <div class="sidebar bg-body">
+        <!-- Write your comments here -->
+      </div>
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

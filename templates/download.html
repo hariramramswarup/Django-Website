@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Download{% endblock title %}
+
+{% block content %}
+<h1 class='my-3'>Download Book PDF</h1>
+<div class="card text-white bg-success py-3 mb-3" >
+    <div class="card-body">
+        <p class="">Remember the name - BookHub!<p>
+        <ul class='mb-3'>
+          <li> Trusted by teachers, students.</li>
+          <li> Daily new books.</li>
+          <li> 10,000+ books avaliable free to download.
+          </li>
+        </ul>
+        <p class='text-justify my-3'>Click on the button given below to download your book PDF. &#129488;</p>
+        <div class=''>
+            <a href='{{system}}'download target="_blank rel="noopener noreferrer class=''><button class='btn btn-primary p-2 px-2 my-2'>Download Book PDF <i class="bi bi-file-earmark-arrow-down-fill"></i></button></a>
+        </div>
+    </div>
+  </div>
+  
+
+ 
+     
+      {% endblock %}

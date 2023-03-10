@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+
+
+
+
+
+<div class=''>
+  
+    <div class='container text-center p-3 my-5'>
+    <div class=''>
+      <h1  class='fs-1fw-bold'>Welcome to<br> BooksHub</h1>
+      <p class='text-center'>Unlimited Books in PDF Free</p>
+    </div>
+
+    <div class='container px-2 my-5'>
+      <form action="/search/" target="_blank" class="d-flex" role="search" method="get" >
+        <input name="q" class="form-control me-2" type="search" placeholder="Search Books" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="card">
+          <div onclick="location.href='/categories'">
+            <div>
+            <p class=' my-2'><i class="bi bi-bookmark-check"></i></p>
+            <p class='text-base'>Browse Categories</p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div onclick="location.href='/books'">
+            <div>
+            <p class=' my-2'><i class="bi bi-book"></i></p>
+            <p class='text-base'>Latest Books</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+       
+
+{% endblock %}
